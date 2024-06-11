@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista nadchodzacych wydarzeń</title>
+</head>
+<body>
+<h1>Aktualne wydarzenia</h1>
+<table>
+    {% for wydarzenie in object_list %}
+        <tr>
+            <td><h2>{{ wydarzenie.title }}</h2></td>
+        </tr>
+        <tr>
+            <td>Data otwarcia: {{ wydarzenie.deta_open }}</td>
+        </tr>
+        <tr>
+            <td>Data zamkniecia: {{ wydarzenie.deta_close }}</td>
+        </tr>
+        <tr>
+            <td>{{ wydarzenie.description }}</td>
+        </tr>
+        <tr>
+            <td>Organizator: {{ wydarzenie.user_append.username }}</td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
