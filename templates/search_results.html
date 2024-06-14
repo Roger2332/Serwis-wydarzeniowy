@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyniki wyszukiwania wydarzeń</title>
+</head>
+<body>
+<h1>Wyniki wyszukiwania</h1>
+{% include 'search_form.html' %}
+<table>
+  {% for wydarzenie in events %}
+  <tr>
+    <td><h2>{{ wydarzenie.title }}</h2></td>
+    <td>Data otwarcia: {{ wydarzenie.deta_open }}</td>
+    <td>Data zamknięcia: {{ wydarzenie.deta_close }}</td>
+    <td>{{ wydarzenie.description }}</td>
+    <td>Organizator: {{ wydarzenie.user_append.username }}</td>
+  </tr>
+  {% endfor %}
+</table>
+<a href="{% url 'index' %}">Powrót do strony głównej</a>
+</body>
+</html>

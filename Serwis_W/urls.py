@@ -18,14 +18,15 @@ from django.contrib import admin
 from django.urls import path
 import django.contrib.auth.views as auth_views
 
-from c_serwis.views import hello, SignUpView, create_event, ListViewW
+from c_serwis.views import hello, SignUpView, create_event, ListViewW, search_events
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello', hello ,name='event_list'),
+    path('hello', hello ,name='index'),
     path('create', create_event, name='create'),
-    path('list', ListViewW.as_view(), name='list'),
+    path('list', ListViewW.as_view(), name='event_list'),
+    path('search', search_events, name='search_events'),
 
 
 #Obsluga uzytkownika
@@ -45,7 +46,13 @@ urlpatterns = [
      path('accounts/reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(),
     name='password_reset_confirm'),
      path('accounts/reset/done/', auth_views.PasswordResetCompleteView.as_view(),
-    name='password_reset_complete')
+    name='password_reset_complete'),
+
+
+
+
+
+
 
 
 ]

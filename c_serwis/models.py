@@ -18,7 +18,7 @@ class CreateWydarzenieModel(models.Model):
     deta_open = models.DateField(null=False)
     deta_close = models.DateField(null=False)
     description = models.TextField(null=False)
-    user_append = models.OneToOneField(CreateUserModel, on_delete=models.CASCADE, null=False)
+    user_append = models.ForeignKey(CreateUserModel, on_delete=models.CASCADE, null=False)
 
     def __str__(self):
         return f""""

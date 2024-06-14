@@ -46,3 +46,23 @@ class UtworzWydarzenieForm(ModelForm):
     deta_open = DateField(widget=SelectDateWidget, validators=[data_valid])
     deta_close = DateField(widget=SelectDateWidget, validators=[data_valid])
     description = CharField(widget=Textarea, validators=[dec_valid])
+
+
+
+
+
+class EventSearchForm(forms.Form):
+    SEARCH_CHOICES = [
+        ('future', 'Przyszłe'),
+        ('ongoing_future', 'Trwające i przyszłe'),
+        ('all', 'Wszystkie')
+    ]
+
+    query = CharField(label='Nazwa wydarzenia', max_length=100, required=False)
+    search_type = ChoiceField(label='Typ wyszukiwania', choices=SEARCH_CHOICES, required=False)
+
+
+
+
+
+
