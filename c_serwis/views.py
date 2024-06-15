@@ -67,3 +67,8 @@ def search_events(request):
             events = events.filter(Q(deta_open__lte=now, deta_close__gte=now) | Q(deta_open__gt=now))
 
     return render(request, 'search_results.html', {'form': form, 'events': events})
+
+
+
+
+print("hello")
