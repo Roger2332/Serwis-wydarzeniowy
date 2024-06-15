@@ -69,6 +69,6 @@ def search_events(request):
     return render(request, 'search_results.html', {'form': form, 'events': events})
 
 
-
+print("napisanie z gita")
 
 print("hello")
